@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Demo Invoice</title>
+</head>
+<body>
+    <table width="980" align="center">
+        <tr>
+            <td height="40" colspan="3">
+                <p><b>Demo Invoice</b></p>
+            </td>
+        </tr>
+        <tr>
+            <td height="200" width="250">
+                <img src="img/logo.png" alt="logo">
+            </td>
+            <td align="center" width="400">
+                <h2>DEMO PC SHOP</h2>
+                <p>Computer City Center, Dhaka <br>Level #02, Shop No #133 <br>
+                    Contact: 01703885*** <br> Email: demo@invoice.com <br>
+                    Wesite: www.demoinvoice.com
+                </p>
+            </td>
+            <td align="right"> 
+                <div class="dateTime">
+                    <div class="invoiceNo">Invoice No. #00321</div>
+                    <div class="date">Issue Date: 
+                        <div id="setDate"></div>
+                    </div>
+                    <div class="time">Iusse Time &nbsp; 
+                        <div id="setTime"></div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td height="220" colspan="2">
+                <div class="customInfo">
+                    <div><h3>Customer Information:</h3></div>
+                    <div>
+                        <label>Name: &nbsp;<input type="text" name="name" placeholder="type customer name"></label> <br><br>
+                        <label>Phone: &nbsp;<input type="number" name="phone" placeholder="contact number"></label> <br><br>
+                        <label>Address: <textarea name="address" id="address" cols="20" rows="2"></textarea></label>
+                    </div>
+                </div>
+            </td>
+            <td align="right">
+                <div class="payment">
+                    <h3>Payment Method</h3>
+                    <select name="payment" id="payment">
+                        <option disabled selected>---select method--</option>
+                        <option value="offline">Offline</option>
+                        <option value="creditCard">Credit Card</option>
+                        <optgroup label="Mobile Banking"> 
+                            <option value="bkash">bkash</option>
+                            <option value="rocket">Rocket</option>
+                            <option value="nogod">Nogod</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="3">
+                <table border="1" width="980" class="serial">
+                    <thead>
+                        <tr>
+                            <th>Sl.No.</th>
+                            <th>Product Name</th>
+                            <th>Description</th>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="res">
+                        <tr>
+                            <td id="slNo"> </td>
+                            <td id="td1"></td>
+                            <td><input type="text" id="description"></td>
+                            <td><input type="number" index="1" id="price1" onkeyup="addjustTotalPrice(this)" min="1"></td>
+                            <td><input type="number" index="1" id="qty1" onkeyup="setTotalPrice(this)" min="1"></td>
+                            <td><input type="text" readonly id="total1" class="item-total-price"></td>
+                            <td><button type="button" id="addBtn"> + </button></td>
+                        </tr>
+                    </tbody>        
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="250" colspan="2">
+                <div class="noteSign">
+                    <div class="note">
+                        <label> <b>Write Notes (if any):</b> <br><textarea name="note" id="note" cols="30" rows="6"></textarea></label>
+                    </div>
+                    <div class="signature">
+                        <p>Authorized Signatutre</p>
+                    </div>
+                </div>
+            </td>
+            <td align="right">
+                <label>Subtotal: <input type="number" readonly id="subtotal"></input></label> <br><br>
+                <label>Vat: <input type="number" id="vat"></input></label> <br><br>
+                <label>Total: <input type="number" readonly id="total"></input></label> <br><br>
+                <label>Paid: <input type="number" id="paid"></input></label> <br><br>
+                <label>Due: <input type="number" readonly id="due"></input></label>
+            </td>
+        </tr>
+        <tr>
+            <td height="40" colspan="3" align="center">
+                <input type="button" name="saveBtn" value="Save"> &nbsp;&nbsp;
+                <input type="button" name="printBtn" value="Print">
+            </td>
+        </tr>
+        <tr>
+            <td height="40" colspan="3" align="center">
+                <h3>"Thank You for Shopping with Us"</h3>
+            </td>
+        </tr>
+        <tr>
+            <td height="40" colspan="3" align="center">
+                <p> Copyright&COPY; by Demo Invoice</p>
+            </td>
+        </tr>
+    </table>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
